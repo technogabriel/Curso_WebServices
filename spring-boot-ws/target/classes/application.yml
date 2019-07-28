@@ -1,0 +1,75 @@
+server:
+  port: 80
+  contextPath: /
+
+spring:
+  profiles:
+    active: h2
+
+---
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/data
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 60000
+      pool-name: notification-pool
+      minimum-idle: 2
+  jpa:
+    properties:
+       hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/data
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 60000
+      pool-name: notification-pool
+      minimum-idle: 2
+  jpa:
+    properties:
+       hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
+
+---
+
+spring:
+  profiles: h2
+  datasource:
+    url: jdbc:h2:mem:notifications
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+

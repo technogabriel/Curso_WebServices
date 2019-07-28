@@ -1,0 +1,16 @@
+target/
+bin/
+logs/
+.idea
+.idea/*
+.settings
+.project
+.classpath
+*.iml
+*.log
+*.gz
+*~
+.DS_Storemvn
+.DS_Store
+src/.DS_Store
+src/main/.DS_Store

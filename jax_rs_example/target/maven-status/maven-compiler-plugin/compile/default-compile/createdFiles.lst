@@ -1,0 +1,4 @@
+com\eduit\ws\model\Libro.class
+com\eduit\ws\service\LibroResource.class
+com\eduit\ws\repository\LibroMemoryRepository.class
+com\eduit\ws\filter\AuthFilter.class
