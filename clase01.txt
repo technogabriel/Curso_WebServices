@@ -1,0 +1,47 @@
+*Web Services:
+JNDI dispara metodos remotos(JAVA)
+se va a usar protocolo http
+*SOAP (uso excesivo de XML, seguridad compleja)hoy es LEGACY
+*REST(mas facil de usar, seguridad mas sencilla, no hace uso de XML)ultimo servicios de hace 10 años esta en REST
+java 10 en adelante elimino biblioteca SOAP
+-------------------------------------------------------------------
+para subir al servidor usar el pto 80(no esta abierto)
+----------------------------------------
+http:
+get, post, put, delete, patch, head, options
+
+---------------------------------------------------------
+en REST no hay forma standar de codificar solicitudes
+se codifica al obj como codificacion js (JSON)
+---------------------------------------------------------
+ramas rest:
+1- jax-rs -> jersey - dropwizard
+       -> cxf -
+2- spring -> spring boot
+       -> 
+3- spark java -> javalin
+---------------------------------------------------------
+jax y spring intentan levantar un solo servlet
+---------------------------------------------------------
+GSON (traducir el metodo JAVA)
+JACKSON
+---------------------------------------------------------
+podemos instalar un cliente para probar (por ejm postman)
+framewor UNIREST (estatico)
+FEIGH
+RETROFIT
+SPRINGCLIENT
+-----------------------------------------------------------
+mvn jetty: start
+(el ejercicio no corre con tomcat, hay que usar jetty)
+----------------------------------------------------------
+el put hace una modificacion total manteniendo el ID
+si quiero modificar una parte puedo usar PATCH
+----------------------------------------------------------
+seguridad:
+JWT standar para generar HASH
+AUTH2 - no vamos a tener control de autenticacion (lo hace un 3ro)
+@webFilter (para la seguridad) en la anotacion puedo indicarle los parametros de sesion
+-----------------------------------------------------------
+
+-------------------------------------------------------------------
